@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+%\graphicspath{{img/}} .md doesn't understand this and have problems
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+
+\usepackage[table,xcdraw]{xcolor}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\makeatletter
+\let\thetitle\@title
+
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{chapters/title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapters/abstract}
+
+\newpage
+
+% introduction
+\input{chapters/introduction}
+\input{chapters/concepts}
+
+% methods
+\input{chapters/method}
+\input{chapters/transaction_throughput}
+\input{chapters/setup_etherium} \\[1cm]
+\input{chapters/setup_hyperledger}
+\input{chapters/data_collection_etherium} \\[1cm]
+\input{chapters/data_collection_hyperledger}
+
+% results
+\input{chapters/results}
+\input{chapters/eth_block_2s} \\[1cm]
+\input{chapters/eth_block_0s} \\[1cm]
+\input{chapters/hyperledger_results}
+
+\newpage
+\input{chapters/conclusion}
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{biblist}
+
+\end{document}
